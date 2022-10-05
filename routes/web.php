@@ -340,3 +340,7 @@ Route::resource('car-headquater', 'CarHeadquaterController\\CarHeadquaterControl
 Route::resource('car-engine', 'CarEngineController\\CarEngineController');
 Route::resource('car-owner', 'CarOwnerController\\CarOwnerController');
 Route::resource('car-prod-date', 'CarProdDateController\\CarProdDateController');
+Route::resource('products', 'ProductsController\\ProductsController');
+Route::resource('car_-products', 'Car_ProductsController\\Car_ProductsController');
+Route::resource('car-products', 'CarProductsController\\CarProductsController');
+Route::resource('car-products', 'CarProductsController\\CarProductsController');

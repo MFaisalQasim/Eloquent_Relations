@@ -53,6 +53,15 @@
                                     @empty
                                         <p>no record found</p>
                                     @endforelse
+                                    <tr>
+                                        <th> Car Product</th>
+                                        @forelse ($car->product as $car_product)
+                                            <td> {{ $car_product->name }} </td> <br>
+
+                                        @empty
+                                        <p>no product found</p>
+                                        @endforelse
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
