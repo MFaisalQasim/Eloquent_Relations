@@ -73,9 +73,24 @@ class CarsController extends Controller
             $this->validate($request, [
 			'car_name' => 'required'
 		]);
-            $requestData = $request->all();
-            
-            Car::create($requestData);
+
+        // dd($request->all());
+        // if ($request->car_image == !null) {        
+        //     return $request->file('car_image');
+        // }
+
+        // Method can be use on request
+
+        return $image_path = time() . $request->file('car_image');
+
+        $requestData = $request->all();
+        $car = Car::create(
+            [
+                'car_name' => $request->car_name,
+                'car_description' => $request->car_description,
+                'image_path' => $request->car_image,
+            ]
+        );
             return redirect('cars')->with('flash_message', 'Car added!');
         }
         return response(view('403'), 403);

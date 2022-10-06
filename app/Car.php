@@ -25,7 +25,7 @@ class Car extends Model
      *
      * @var array
      */
-    protected $fillable = ['car_name', 'car_description'];
+    protected $fillable = ['car_name', 'car_description','image_path'];
 
     public function car_model()
     {

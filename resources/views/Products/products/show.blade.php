@@ -28,7 +28,6 @@
                                     <th> Des </th>
                                     <td> {{ $product->des }} </td>
                                 </tr>
-
                                 <tr>
                                     <th>Product Car </th>
                                     @forelse ($product->car as $product_car)

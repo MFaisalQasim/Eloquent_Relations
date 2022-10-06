@@ -5,6 +5,15 @@
         {!! $errors->first('car_name', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+<div class="form-group {{ $errors->has('car_image') ? 'has-error' : '' }}">
+    <label for="car_image" class="col-md-4 control-label">{{ 'Car Image' }}</label>
+    <div class="col-md-6">
+        <input class="form-control" name="car_image" type="file" id="car_image" value=""   required>
+        {{-- <input class="form-control" name="images[]" type="file" id="images" value="" 
+            required multiple> --}}
+        {!! $errors->first('car_image', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
 <div class="form-group {{ $errors->has('car_description') ? 'has-error' : '' }}">
     <label for="car_description" class="col-md-4 control-label">{{ 'Car Description' }}</label>
     <div class="col-md-6">
