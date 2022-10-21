@@ -6,7 +6,7 @@ use App\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Role;
-
+use Illuminate\Support\Facades\Log;
 class RoleController extends Controller
 {
     public function getIndex(){
@@ -59,10 +59,11 @@ class RoleController extends Controller
         $role->save();
         if($request->permissions == null){
             $role->permissions()->detach();
+            // return 'if';
         }else{
             $role->permissions()->sync($request->permissions);
+            // return 'else';
         }
-
         Session::flash('message','Role has been updated');
         return redirect('role-management');
     }

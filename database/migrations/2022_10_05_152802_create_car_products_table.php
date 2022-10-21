@@ -12,7 +12,7 @@ class CreateCarProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('car_products', function (Blueprint $table) {
+        Schema::create('car_product', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->unsignedInteger('car_id');

@@ -10,8 +10,6 @@ class Role
 {
     public function handle($request, Closure $next, $role)
     {
-
-        
         if (Auth::guest()) {
             throw UnauthorizedException::notLoggedIn();
         }
@@ -25,7 +23,6 @@ class Role
                 return redirect('/');
             }
         }
-
         return $next($request);
     }
 }

@@ -27,7 +27,6 @@ class Product extends Model
      */
     protected $fillable = ['name', 'des'];
 
-    
     public function car()
     {
         return $this->belongsToMany(Car::class);

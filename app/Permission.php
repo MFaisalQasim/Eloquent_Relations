@@ -34,6 +34,8 @@ class Permission extends Model
       $permissions['edit'] = $permissionsList->where('name','=','edit-'.str_slug($menu))->pluck('id')->first();
       $permissions['view'] = $permissionsList->where('name','=','view-'.str_slug($menu))->pluck('id')->first();
       $permissions['delete'] = $permissionsList->where('name','=','delete-'.str_slug($menu))->pluck('id')->first();
+    //   dd($menu);
+    //   dd($permissions);
      return  $permissions;
     }
 }

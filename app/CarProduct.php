@@ -26,6 +26,4 @@ class CarProduct extends Model
      * @var array
      */
     protected $fillable = ['car_id', 'product_id'];
-
-    
 }

@@ -31,10 +31,10 @@ class Car extends Model
     {
         return $this->hasMany(CarModel::class);
     }
-    // public function headquater()
-    // {
-    //     return $this->hasOne(CarHeadquater::class);
-    // }
+    public function headquater()
+    {
+        return $this->hasOne(CarHeadquater::class);
+    }
     public function owner()
     {
         return $this->hasOne(CarOwner::class);

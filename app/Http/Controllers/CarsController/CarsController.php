@@ -80,14 +80,17 @@ class CarsController extends Controller
 
         // Method can be use on request
 
-        return $image_path = time() . $request->file('car_image');
-
+         $image_name = time(). '-' . $request->car_name . '.' . $request->car_image->extension();
+        
+        $request->car_image->move(public_path('assets/images'), $image_name);
+        
+            // dd($image_name);
         $requestData = $request->all();
         $car = Car::create(
             [
                 'car_name' => $request->car_name,
                 'car_description' => $request->car_description,
-                'image_path' => $request->car_image,
+                'image_path' => $image_name,
             ]
         );
             return redirect('cars')->with('flash_message', 'Car added!');

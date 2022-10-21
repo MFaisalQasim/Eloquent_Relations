@@ -16,14 +16,12 @@
                     <div class="table-responsive">
                         <table class="table table">
                             <tbody>
-                                {{-- <tr>
-                                    <th>ID</th>
-                                    <td>{{ $car->id }}</td>
-                                </tr> --}}
                                 <tr>
                                     <th> Car Name </th>
                                     <td> {{ $car->car_name }} </td>
                                 </tr>
+                                <img style="width: -webkit-fill-available;
+    height: auto;" src="{{ asset('assets/images/' . $car->image_path) }} " alt=""> 
                                 <tr>
                                     <th> Car Description </th>
                                     <td> {{ $car->car_description }} </td>
@@ -32,12 +30,12 @@
                                     <th> Car Production Date</th>
                                     <td> {{ $car->prod_date->date }} </td>
                                 </tr>
-                                {{-- <tr>
+                                <tr>
                                     <th> Car Headquater </th>
                                     <td> {{ $car->headquater->name }} </td>
-                                </tr> --}}
+                                </tr> 
                                 @foreach ($car->car_model as $car_model_item)
-                                    <tr>
+                                <tr>
                                         <th> Car Model </th>
                                         <td> {{ $car_model_item->car_model }} </td>
                                         <th> Car Engine </th>
@@ -46,27 +44,26 @@
                                             @if ($car_model_item->id == $car_engine_item->id)
                                                 <td> {{ $car_engine_item->name }} </td>
                                             @else
-                                                <p>no car engine found</p>
+                                            <td>no car engine found</td>
                                             @endif
                                         @endforeach
-                                    </tr>
-                                    @empty
-                                        <p>no record found</p>
-                                    @endforelse
-                                    <tr>
+                                </tr>
+                                @empty
+                                <td>no record found</td>
+                                @endforelse
+                                <tr>
                                         <th> Car Product</th>
                                         @forelse ($car->product as $car_product)
                                             <td> {{ $car_product->name }} </td> <br>
-
                                         @empty
-                                        <p>no product found</p>
+                                        <td>no product found</td>
                                         @endforelse
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection
